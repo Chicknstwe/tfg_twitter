@@ -132,7 +132,7 @@ class TwitterCollector():
                 time.sleep(15)
             
             # Twitter statuses como dicts en lugar de objetos Status
-            raw_statuses = [status.__dict__ for status in self.api.GetSearch(raw_query="q=from%3A{}%20%23{}-filter%3Aretweets&result_type=popular&lang=es&count=200".format(username, hashtag))]
+            raw_statuses = [status.__dict__ for status in self.api.GetSearch(raw_query="q=from%3A{}%20%23{}-filter%3Aretweets&result_type=popular&lang=es&count=100".format(username, hashtag))]
             if len(raw_statuses) > 0:
                 # Se filtran los resultados para obtener únicamente los campos de interés
                 statuses = twutils.filterStatuses(raw_statuses)
